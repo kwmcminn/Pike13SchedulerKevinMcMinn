@@ -13,8 +13,8 @@
 
       <% @activities.each_with_index do |x, index| %>
       <div class='flex-center class-tile' style='grid-area: <%=x.start_time_id + 2%>/<%=x.day_id + 1%>/<%=x.end_time_id + 2%>/<%=x.day_id + 1%>; background-color: <%= @colors.sample %>'>
-         <span><%= x.name %></span>
-         <span class='small-text'> <%= x.start_time.hour%>-<%=x.end_time.hour%> </span>
+         <span class='class-title'><%= x.name %></span>
+         <i class='small-text'> <%= x.start_time.hour%>-<%=x.end_time.hour%> </i>
       </div>
       <% end %>
 
