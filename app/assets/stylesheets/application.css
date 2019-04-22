@@ -22,6 +22,14 @@
    overflow: hidden;
 }
 
+.flex-baseline{
+   display: flex;
+   justify-content: baseline;
+   align-items: center;
+   flex-direction: column;
+   overflow: hidden;
+}
+
 
 
 .class-tile{
@@ -46,10 +54,10 @@
 
 
 
-   .class-title{
-      font-size: 1.5vh;
-   }
+.class-title{
+   font-size: 1.5vh;
+}
 
-   .small-text{
-      font-size: 1.1vh;
-   }
+.small-text{
+   font-size: 1.1vw;
+}

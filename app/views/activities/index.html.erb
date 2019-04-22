@@ -4,7 +4,7 @@
    <div class="schedule-grid">
       <h1 class='header'> Pike13 Scheduler </h1>
       <% @start_times.each_with_index do |x, index| %>
-      <div class='flex-center' style='grid-row:<%= index + 3%>'> <%= x.hour %> </div>
+      <div class='flex-baseline' style='grid-row:<%= index + 3%>'> <%= x.hour %> </div>
       <% end %>
 
       <% @days.each_with_index do |x, index| %>
