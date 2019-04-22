@@ -1,0 +1,23 @@
+
+
+<div class='main-page'>
+   <div class="schedule-grid">
+      <h1 class='header'> Pike13 Scheduler </h1>
+      <% @start_times.each_with_index do |x, index| %>
+      <div class='flex-center' style='grid-row:<%= index + 3%>'> <%= x.hour %> </div>
+      <% end %>
+
+      <% @days.each_with_index do |x, index| %>
+      <div class='flex-center' style='grid-column:<%= index + 2%>; grid-row: 2'> <%= x.day %> </div>
+      <% end %>
+
+      <% @activities.each_with_index do |x, index| %>
+      <div class='flex-center class-tile' style='grid-area: <%=x.start_time_id + 2%>/<%=x.day_id + 1%>/<%=x.end_time_id + 2%>/<%=x.day_id + 1%>; background-color: <%= @colors.sample %>'>
+         <span><%= x.name %></span>
+         <span class='small-text'> <%= x.start_time.hour%>-<%=x.end_time.hour%> </span>
+      </div>
+      <% end %>
+
+   </div>
+   <%= link_to '<button class="new-class" type="button">Schedule New Class</button>'.html_safe, new_activity_path %>
+</div>
