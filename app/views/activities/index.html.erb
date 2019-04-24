@@ -4,13 +4,20 @@
    <h4 class='stamp'>Created by Kevin McMinn</h4>
    <div class="schedule-grid">
       <h1 class='header'> Pike13 Scheduler </h1>
+
+      <!-- Iterate over start times to establish 'rows' for calender grid-->
+
       <% @start_times.each_with_index do |x, index| %>
       <div class='flex-baseline' style='grid-row:<%= index + 3%>'> <%= x.hour %> </div>
       <% end %>
 
+      <!-- Iterate over days to establish 'colums' for calender grid-->
+
       <% @days.each_with_index do |x, index| %>
       <div class='flex-center' style='grid-column:<%= index + 2%>; grid-row: 2'> <%= x.day %> </div>
       <% end %>
+
+      <!-- Iterate over activities, pull out day/start_time/end_time and use them to place on grid by the id-->
 
       <% @activities.each_with_index do |x, index| %>
       <div class='flex-center class-tile' style='grid-area: <%=x.start_time_id + 2%>/<%=x.day_id + 1%>/<%=x.end_time_id + 2%>/<%=x.day_id + 1%>; background-color: <%= @colors.sample %>'>
